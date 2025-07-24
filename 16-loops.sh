@@ -34,16 +34,16 @@ if [ $1 -eq 0 ]
 }
 
 # for $PACKAGE in $@  (This is to send the packages as arguments directly instead of giving it in script)
-for $PACKAGE in ${PACKAGES[@]}
+for $PACKAGES in ${PACKAGES[@]}
 do
-    dnf list installed $PACKAGE &>>LOG_FILE
+    dnf list installed $PACKAGES &>>LOG_FILE
     if [ $? -ne 0 ]
     then
-        echo "$PACKAGE is not installed...going to install" | tee -a $LOG_FILE
-        dnf install $PACKAGE -y &>>$LOG_FILE
-        VALIDATE $? "$PACKAGE"
+        echo "$PACKAGES is not installed...going to install" | tee -a $LOG_FILE
+        dnf install $PACKAGES -y &>>$LOG_FILE
+        VALIDATE $? "$PACKAGES"
 
     else
-        echo -e "nothing to do $PACKAGE.. $Y already installed $N" | tee -a $LOG_FILE
+        echo -e "nothing to do $PACKAGES.. $Y already installed $N" | tee -a $LOG_FILE
     fi
 done
