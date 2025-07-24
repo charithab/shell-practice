@@ -13,7 +13,7 @@ LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"
 PACKAGES=("mysql" "python3" "nginx" "httpd")
 
 mkdir -p $LOGS_FOLDER
-echo "script started executing at: $(DATE)"
+echo "script started executing at: $(date)" | tee -a $LOG_FILE
 
 if [ $USERID -ne 0 ]
 then
@@ -44,6 +44,6 @@ do
         VALIDATE $? "$PACKAGE"
 
     else
-        echo "nothing to do $PACKAGE.. $Y already installed $N" | tee -a $LOG_FILE
+        echo -e "nothing to do $PACKAGE.. $Y already installed $N" | tee -a $LOG_FILE
     fi
 done
