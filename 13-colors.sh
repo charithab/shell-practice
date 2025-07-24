@@ -34,7 +34,7 @@ then
     VALIDATE $? "MySql"
 
 else
-    echo "nothing to do Mysql.. $Y already installed $N"
+    echo -e "nothing to do Mysql.. $Y already installed $N"
 fi
 
 dnf list installed nginx
@@ -46,7 +46,7 @@ then
     VALIDATE $? "nginx"
 
 else
-    echo "nothing to do nginx.. $Y already installed $N"
+    echo -e "nothing to do nginx.. $Y already installed $N"
 fi
 
 dnf list installed python3
@@ -58,5 +58,5 @@ then
     VALIDATE $? "python3"
 
 else
-    echo "nothing to do python3.. $Y already installed $N"
+    echo -e "nothing to do python3.. $Y already installed $N"
 fi
