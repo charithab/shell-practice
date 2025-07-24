@@ -12,7 +12,7 @@ SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
 LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"
 
 mkdir -p $LOGS_FOLDER
-echo "script started executing at: $(DATE)"
+echo "script started executing at: $(date)" | tee -a $LOG_FILE
 
 if [ $USERID -ne 0 ]
 then
@@ -40,7 +40,7 @@ then
     VALIDATE $? "MySql"
 
 else
-    echo "nothing to do Mysql.. $Y already installed $N" | tee -a $LOG_FILE
+    echo -e "nothing to do Mysql.. $Y already installed $N" | tee -a $LOG_FILE
 fi
 
 dnf list installed nginx &>>$LOG_FILE
@@ -52,7 +52,7 @@ then
     VALIDATE $? "nginx"
 
 else
-    echo "nothing to do nginx.. $Y already installed $N" | tee -a $LOG_FILE
+    echo -e "nothing to do nginx.. $Y already installed $N" | tee -a $LOG_FILE
 fi
 
 dnf list installed python3 &>>$LOG_FILE
@@ -64,5 +64,5 @@ then
     VALIDATE $? "python3"
 
 else
-    echo "nothing to do python3.. $Y already installed $N" | tee -a $LOG_FILE
+    echo -e "nothing to do python3.. $Y already installed $N" | tee -a $LOG_FILE
 fi
