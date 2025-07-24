@@ -2,7 +2,7 @@
 
 FRUITS=("Mango" "Apple" "Orange" "grapes")
 
-echo "Frist Fruit: ${Fruits[0]}"
-echo "Frist Fruit: ${Fruits[3]}"
+echo "First Fruit: ${FRUITS[0]}"
+echo "Last Fruit: ${FRUITS[3]}"
 
 echo "All fruits are: ${FRUITS[@]}"
