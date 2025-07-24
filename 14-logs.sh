@@ -41,7 +41,6 @@ then
 
 else
     echo "nothing to do Mysql.. $Y already installed $N" | tee -a $LOG_FILE
-    exit 1
 fi
 
 dnf list installed nginx &>>$LOG_FILE
@@ -54,7 +53,6 @@ then
 
 else
     echo "nothing to do nginx.. $Y already installed $N" | tee -a $LOG_FILE
-    exit 1
 fi
 
 dnf list installed python3 &>>$LOG_FILE
@@ -67,5 +65,4 @@ then
 
 else
     echo "nothing to do python3.. $Y already installed $N" | tee -a $LOG_FILE
-    exit 1
 fi
