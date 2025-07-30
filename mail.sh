@@ -8,7 +8,7 @@ FINAL_MSG=$(printf '%s\n' "$MSG" | sed -e 's/[]\/$*.^[]/\\&/g')
 TO_ADDRESS=$5
 SUBJECT=$6
 
-FINAL_BODY=$(sed -e "s/TO_TEAM/$TO_TEAM/g" sed -e "s/ALERT_TYPE/$ALERT_TYPE/g" sed -e "s/IP_ADDRESS/$IP_ADDRESS/g" sed -e "s/MSG/$FINA:_MSG/g" sed -e "s/TO_ADDRESS/$TO_ADDRESS/g" sed -e "s/SUBJECT/$SUBJECT/g")
+FINAL_BODY=$(sed -e "s/TO_TEAM/$TO_TEAM/g" sed -e "s/ALERT_TYPE/$ALERT_TYPE/g" sed -e "s/IP_ADDRESS/$IP_ADDRESS/g" sed -e "s/MSG/$FINA:_MSG/g" sed -e "s/TO_ADDRESS/$TO_ADDRESS/g" sed -e "s/SUBJECT/$SUBJECT/g" template.html)
 
 {
 echo "To: $TO_ADDRESS"
