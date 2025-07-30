@@ -1,7 +1,5 @@
 #!/bin/bash
 
-#!/bin/bash
-
 USERID=$(id -u)
 R="\e[31m"
 G="\e[32m"
@@ -36,7 +34,7 @@ if [ $1 -eq 0 ]
 # for $PACKAGE in $@  (This is to send the packages as arguments directly instead of giving it in script)
 for package in ${PACKAGES[@]}
 do
-    dnf list installed $package &>>LOG_FILE
+    dnf list installed $package &>>$LOG_FILE
     if [ $? -ne 0 ]
     then
         echo "$package is not installed...going to install" | tee -a $LOG_FILE

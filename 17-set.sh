@@ -1,0 +1,5 @@
+#!/bin/bash
+
+echo "Hello, Good Morning"
+echooooo "This is an error"
+echo "Good Evening"
