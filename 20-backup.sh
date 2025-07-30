@@ -63,10 +63,10 @@ fi
 
 FILES=$(find $SOURCE_DIR -name "*.log" -mtime $DAYS)
 
-if  [ ! -f $FILES ]
-then 
-    echo -e "$R No log files Present in Source Directory $SOURCE_DIR $N" | tee -a $LOG_FILE
-fi
+# if  [ ! -f $FILES ]
+# then 
+#     echo -e "$R No log files Present in Source Directory $SOURCE_DIR $N" | tee -a $LOG_FILE
+# fi
 
 sudo dnf install zip -y
 
