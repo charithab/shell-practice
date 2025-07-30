@@ -8,7 +8,7 @@ do
     a=`expr $a + 1`
 done
 
-while IFS read -r line
+while IFS= read -r line
 do
     echo $line
 done < 17-set.sh
