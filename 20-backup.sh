@@ -21,7 +21,7 @@ mkdir -p $LOGS_FOLDER
 
 SOURCE_DIR=$1
 DEST_DIR=$2
-DAYS=$(3:-14) # If days are provided(i.e., $3) then it will be considered, otherwise default will be 14 days
+DAYS=${3:-14} # If days are provided(i.e., $3) then it will be considered, otherwise default will be 14 days
 
 if [ $USERID -ne 0 ]
     then
@@ -55,13 +55,13 @@ then
     exit 1
 fi
 
-if [ ! -d $DEST_DIR]
+if [ ! -d $DEST_DIR ]
 then
     echo -e "$R Destination Directory $DEST_DIR does not exist. Please check $N"
     exit 1
 fi
 
-FILES=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS)
+FILES=$(find $SOURCE_DIR -name "*.log" -mtime $DAYS)
 
 if  [ ! -f $FILES ]
 then 
